@@ -200,10 +200,27 @@ function findTomatoAndCheese(arr, query1, query2) {
 
 }
 let tomatoAndCheeseFood = findTomatoAndCheese(dishes, "tomato", "cheese");
-console.log("Tomato and Cheese Foods", tomatoAndCheeseFood)
+//console.log("Tomato and Cheese Foods", tomatoAndCheeseFood)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+
+function findCuisineTypes( array = [{}]){
+  let result = []
+  for(i = 0; i < array.length; i++){
+    if(result.includes(array[i].cuisine)) { 
+      result = result
+    }
+    else{
+      result.push(array[i].cuisine)
+    }
+  }
+  return result
+}
+let cuisineTypes = findCuisineTypes(dishes)
+console.log("Cuisine Types:", cuisineTypes)
+
+
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
