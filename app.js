@@ -136,19 +136,71 @@ function findVegetarianDishes() {
   return results;
 }
 let vegetarianFood = findVegetarianDishes();
-console.log("Vegetarian Foods", vegetarianFood)
+//console.log("Vegetarian Foods", vegetarianFood)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function findFiveServingsItalian() {
+  let results = dishes.filter( (el)=>{
+    if(el.cuisine === "Vegetarian" && el.servings > 5){
+      return true;
+    }
+    else{
+      return false;
+    }
+  });
+  return results;
+}
+let fiveServingsItalianFood = findFiveServingsItalian();
+//console.log("Italian Foods", fiveServingsItalianFood)
+
+
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
+
+function findIdEqualsServings() {
+  let results = dishes.filter( (el)=>{
+    if(el.id === el.servings){
+      return true;
+    }
+    else{
+      return false;
+    }
+  });
+  return results;
+}
+let servingsEqualsId = findIdEqualsServings();
+//console.log("Servings = Id", servingsEqualsId)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function findEvenServingsSizes() {
+  let results = dishes.filter( (el)=>{
+    if(el.servings % 2 === 0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  });
+  return results;
+}
+let EvenServingSizes = findEvenServingsSizes();
+//console.log("Dishes with even servings size quantities", EvenServingSizes)
+
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
+
+function findTomatoAndCheese(arr, query1, query2) {
+  return arr.filter((el) => 
+  el.ingredients.includes(query1, query2)
+  )
+
+}
+let tomatoAndCheeseFood = findTomatoAndCheese(dishes, "tomato", "cheese");
+console.log("Tomato and Cheese Foods", tomatoAndCheeseFood)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
